@@ -1,0 +1,34 @@
+<%- include("partials/header") -%>
+<div class="jumbotron">
+    <h1 class="display-4">Vehicle Info</h1>
+    <p>These are your search results.</p>
+   
+    <hr class="my-4">
+  
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Bike name</th>
+            <th scope="col">Rent/day</th>
+            <th scope="col">Deposit </th>
+            <th scope="col">Images</th>
+          </tr>
+        </thead>
+        
+        <tbody class="">
+            <% for(var i=0; i<vehicle.length; i++){%>
+                    <td><%= vehicle[i].Bike_name %></td>
+                    <td><%= vehicle[i].RentEachDay %></td>
+                    <td><%= vehicle[i].Deposit %></td>
+                    <td><a target="_blank" href=<%=vehicle[i].Image_location%>> Image of the vehicle </a> </td>
+                    </tr>
+                    
+        </tbody>
+            <% }   %>
+    </table>
+    <form method="POST" action="/display"  >
+        <button type="submit" class="submit-button btn btn-dark"> Go back to search</button>
+    </form>
+</div>
+
+<%- include("partials/footer") -%>
